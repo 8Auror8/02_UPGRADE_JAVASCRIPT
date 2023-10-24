@@ -26,14 +26,19 @@ var b = 0;
 
 function fibonacciSec(n){
 
+    //Añadimos los dos valores iniciales de la secuencia Fibonacci y lo dejamos preparado para el comienzo del While.
     if(a === b){
         b = a + 1;
         numeros.push(a);
         numeros.push(b);
     }
+
+    //Comenzamos con un while (para usar uno diferente del bucle for) Le eliminamos 2 a n ya que los dos valores iniciales los hemos añadido arriba.
     while((n - 2) != 0){
+        // Procedemos con la suma de los dos numeros y pusheamos en el array.
         let suma = a + b;
         numeros.push(suma);
+        //Alternamos la variable que va a recibir el valor de suma, para que la secuencia Fibonacci sea correcta.
         if( (n % 2) === 0){
             a = suma;
             n--
@@ -43,8 +48,10 @@ function fibonacciSec(n){
             n--
         }
     }
+    //Imprimimos el array.
     console.log(numeros)
 }
 
+//Llamamos a la función
 fibonacciSec(n);
 
